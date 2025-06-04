@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo - Plataforma Homeschooling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Protótipo - Plataforma Homeschooling</h1>
+    </header>
+
+    <main>
+        <section id="children-section">
+            <h2>Gerenciar Crianças</h2>
+            <form id="add-child-form">
+                <input type="text" id="child-name" placeholder="Nome da Criança" required>
+                <input type="date" id="child-birthdate" placeholder="Data de Nascimento">
+                <button type="submit">Adicionar Criança</button>
+            </form>
+            <div id="children-list">
+                <h3>Crianças Cadastradas:</h3>
+                <select id="child-select" size="5">
+                    <!-- Options will be populated by JS -->
+                </select>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="details-section" style="display: none;">
+            <h2 id="selected-child-name">Detalhes de [Nome da Criança]</h2>
+
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab(event, 'goals')">Metas</button>
+                <button class="tab-button" onclick="openTab(event, 'activities')">Atividades</button>
+                <button class="tab-button" onclick="openTab(event, 'reports')">Relatórios</button>
+                <button class="tab-button" onclick="openTab(event, 'ai')">Análise IA</button>
+            </div>
+
+            <!-- Metas Tab -->
+            <div id="goals" class="tab-content" style="display: block;">
+                <h3>Metas de Aprendizagem</h3>
+                <form id="add-goal-form">
+                    <select id="goal-subject" required>
+                        <option value="" disabled selected>Selecione a Disciplina</option>
+                        <!-- Options will be populated by JS -->
+                    </select>
+                    <input type="text" id="goal-description" placeholder="Descrição da Meta" required>
+                    <button type="submit">Adicionar Meta</button>
+                </form>
+                <ul id="goals-list">
+                    <!-- Goals will be populated by JS -->
+                </ul>
+            </div>
+
+            <!-- Atividades Tab -->
+            <div id="activities" class="tab-content">
+                <h3>Registro de Atividades</h3>
+                <form id="log-activity-form">
+                    <select id="activity-subject" required>
+                        <option value="" disabled selected>Selecione a Disciplina</option>
+                        <!-- Options will be populated by JS -->
+                    </select>
+                    <input type="text" id="activity-description" placeholder="Descrição da Atividade" required>
+                    <textarea id="activity-observations" placeholder="Observações (opcional)"></textarea>
+                    <button type="submit">Registrar Atividade</button>
+                </form>
+                <ul id="activities-list">
+                    <!-- Activities will be populated by JS -->
+                </ul>
+            </div>
+
+            <!-- Relatórios Tab -->
+            <div id="reports" class="tab-content">
+                <h3>Gerar Relatório</h3>
+                <button id="generate-report-btn">Gerar Relatório PDF (Exemplo)</button>
+                <p id="report-status"></p>
+            </div>
+
+            <!-- Análise IA Tab -->
+            <div id="ai" class="tab-content">
+                <h3>Análise de Progresso (Simulada)</h3>
+                <button id="analyze-progress-btn">Solicitar Análise</button>
+                <div id="ai-analysis-result" style="white-space: pre-wrap; background-color: #f0f0f0; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                    <!-- AI analysis will be displayed here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Protótipo desenvolvido pela Manus AI</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
