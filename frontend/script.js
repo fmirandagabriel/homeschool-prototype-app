@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://8000-i3by9fmligrq3c34yovep-de67d3f2.manusvm.computer'; // Adjust if your backend runs elsewhere
+const API_BASE_URL = 'https://homeschool-backend-7iou.onrender.com'; // Adjust if your backend runs elsewhere
 
 // --- DOM Elements ---
 const addChildForm = document.getElementById('add-child-form');
@@ -363,4 +363,3 @@ async function initializeApp() {
 
 // --- Start the app ---
 document.addEventListener('DOMContentLoaded', initializeApp);
-
